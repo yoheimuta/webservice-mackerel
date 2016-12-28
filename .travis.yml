@@ -9,7 +9,10 @@ perl:
   - "5.20"
 
 before_install:
-  - cpanm -n Carton
+  - cpanm --notest Minilla Carton
 
 install:
   - carton install
+
+script:
+  - carton exec -- minil test --all
